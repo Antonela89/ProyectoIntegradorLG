@@ -21,43 +21,40 @@ public class Persona implements Serializable{
 	private String nombre;
 	private String apellido;
 	private String titulo;
-	private String acercaMi;
-	private String urlFoto;
-	private String likedinUrl;
-	private String githubUrl;
-	private String facebookUrl;
-	private String instagramUrl;
-	private String imgBanner;
+	private String acercaDeMi;
+	private String foto;
+	private String banner;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idEd")
 	private List<Educacion> educacionList;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idEx")
 	private List<Experiencia> experienciaList;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idProy")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idPro")
 	private List<Proyecto> proyectoList;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idSkill")
-	private List<Skills> SkillsList;
-	
-	 
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idSSkill")
+	private List<SoftSkill> softSkillList;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idHSkill")
+	private List<HardSkill> hardSkillList;
+
+ 
 	//Constructores 
+
 	public Persona() {
 	}
 
-	public Persona(Long id, String nombre, String apellido, String titulo, String acercaMi, String urlFoto, String likedinUrl, String githubUrl, String facebookUrl, String instagramUrl, String imgBanner) {
+	public Persona(Long id, String nombre, String apellido, String titulo, String acercaDeMi, String foto, String banner) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.titulo = titulo;
-		this.acercaMi = acercaMi;
-		this.urlFoto = urlFoto;
-		this.likedinUrl = likedinUrl;
-		this.githubUrl = githubUrl;
-		this.facebookUrl = facebookUrl;
-		this.instagramUrl = instagramUrl;
-		this.imgBanner = imgBanner;
+		this.acercaDeMi = acercaDeMi;
+		this.foto = foto;
+		this.banner = banner;
 	}
 
-	//Getters and Setters
+	
+	//Getter and Setter
+	
 	public Long getId() {
 		return id;
 	}
@@ -82,46 +79,6 @@ public class Persona implements Serializable{
 		this.apellido = apellido;
 	}
 
-	public String getLikedinUrl() {
-		return likedinUrl;
-	}
-
-	public void setLikedinUrl(String likedinUrl) {
-		this.likedinUrl = likedinUrl;
-	}
-
-	public String getGithubUrl() {
-		return githubUrl;
-	}
-
-	public void setGithubUrl(String githubUrl) {
-		this.githubUrl = githubUrl;
-	}
-
-	public String getFacebookUrl() {
-		return facebookUrl;
-	}
-
-	public void setFacebookUrl(String facebookUrl) {
-		this.facebookUrl = facebookUrl;
-	}
-
-	public String getInstagramUrl() {
-		return instagramUrl;
-	}
-
-	public void setInstagramUrl(String instagramUrl) {
-		this.instagramUrl = instagramUrl;
-	}
-
-	public String getImgBanner() {
-		return imgBanner;
-	}
-
-	public void setImgBanner(String imgBanner) {
-		this.imgBanner = imgBanner;
-	}
-
 	public String getTitulo() {
 		return titulo;
 	}
@@ -130,20 +87,27 @@ public class Persona implements Serializable{
 		this.titulo = titulo;
 	}
 
-	public String getAcercaMi() {
-		return acercaMi;
+	public String getAcercaDeMi() {
+		return acercaDeMi;
 	}
 
-	public void setAcercaMi(String acercaMi) {
-		this.acercaMi = acercaMi;
+	public void setAcercaDeMi(String acercaDeMi) {
+		this.acercaDeMi = acercaDeMi;
 	}
 
-	public String getUrlFoto() {
-		return urlFoto;
+	public String getFoto() {
+		return foto;
 	}
 
-	public void setUrlFoto(String urlFoto) {
-		this.urlFoto = urlFoto;
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
+	public String getBanner() {
+		return banner;
+	}
+
+	public void setBanner(String banner) {
+		this.banner = banner;
+	}
 }

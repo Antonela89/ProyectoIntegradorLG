@@ -43,16 +43,16 @@ public class EducacionController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/editar/{id}")
 	public Educacion editarEducacion(@PathVariable Long id,
-                                @RequestParam("institucion") String nuevaInstitucion,
-				@RequestParam("titulo") String nuevoTitulo,
-				@RequestParam("anoInicio") int nuevoAnoInicio,
-				@RequestParam("anoFin") int nuevoAnoFin){
+                                @RequestParam("instituto") String nuevoInstituto,
+				@RequestParam("diploma") String nuevoDiploma,
+				@RequestParam("inicio") int nuevoInicio,
+				@RequestParam("fin") int nuevoFin){
         Educacion educacion = educacionService.buscarEducacion(id);
         
-        educacion.setInstitucion(nuevaInstitucion);
-        educacion.setTitulo(nuevoTitulo);
-        educacion.setAnoInicio(nuevoAnoInicio);
-	educacion.setAnoFin(nuevoAnoFin);
+        educacion.setInstituto(nuevoInstituto);
+        educacion.setDiploma(nuevoDiploma);
+        educacion.setInicio(nuevoInicio);
+	educacion.setFin(nuevoFin);
         
        educacionService.crearEducacion(educacion);
         return educacion;

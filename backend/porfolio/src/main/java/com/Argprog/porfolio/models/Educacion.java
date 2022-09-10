@@ -10,63 +10,64 @@ import javax.persistence.Id;
 public class Educacion implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idEdu;
-	private String institucion;
-	private String titulo;
-	private int anoInicio;
-	private int anoFin;
+	private Long idEd;
+	private String instituto;
+	private String diploma;
+	private int inicio;
+	private int fin;
 	
 	//Contructores 
 	public Educacion() {
 	}
 
-	public Educacion(Long idEdu, String institucion, String titulo, int anoInicio, int anoFin) {
-		this.idEdu = idEdu;
-		this.institucion = institucion;
-		this.titulo = titulo;
-		this.anoInicio = anoInicio;
-		this.anoFin = anoFin;
+	public Educacion(Long idEd, String instituto, String diploma, int inicio, int fin) {
+		this.idEd = idEd;
+		this.instituto = instituto;
+		this.diploma = diploma;
+		this.inicio = inicio;
+		this.fin = fin;
 	}
 
-	//Getters and Setters
-	public Long getIdEdu() {
-		return idEdu;
+	//Getter and Setter
+
+	public Long getIdEd() {
+		return idEd;
 	}
 
-	public void setIdEdu(Long idEdu) {
-		this.idEdu = idEdu;
+	public void setIdEd(Long idEd) {
+		this.idEd = idEd;
 	}
 
-	public String getInstitucion() {
-		return institucion;
+	public String getInstituto() {
+		return instituto;
 	}
 
-	public void setInstitucion(String institucion) {
-		this.institucion = institucion;
+	public void setInstituto(String instituto) {
+		this.instituto = instituto;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getDiploma() {
+		return diploma;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setDiploma(String diploma) {
+		this.diploma = diploma;
 	}
 
-	public int getAnoInicio() {
-		return anoInicio;
+	public int getInicio() {
+		return inicio;
 	}
 
-	public void setAnoInicio(int anoInicio) {
-		this.anoInicio = anoInicio;
+	public void setInicio(int inicio) {
+		this.inicio = inicio;
 	}
 
-	public int getAnoFin() {
-		return anoFin;
+	public int getFin() {
+		return fin;
 	}
 
-	public void setAnoFin(int anoFin) {
-		this.anoFin = anoFin;
+	public void setFin(int fin) {
+		this.fin = fin;
 	}
-	
+		
 }

@@ -1,6 +1,5 @@
 package com.Argprog.porfolio.models;
 
-
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,32 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Skills implements Serializable {
+public class SoftSkill implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idSkill;
+	private Long idSSkill;
 	private String nombreSkill;
 	private String fotoSkill;
 	private int porcentaje;
+	
+	//Contructor
 
-	//Contructores
-	public Skills() {
+	public SoftSkill() {
 	}
 
-	public Skills(Long idSkill, String nombreSkill, String fotoSkill, int porcentaje) {
-		this.idSkill = idSkill;
+	public SoftSkill(Long idSSkill, String nombreSkill, String fotoSkill, int porcentaje) {
+		this.idSSkill = idSSkill;
 		this.nombreSkill = nombreSkill;
 		this.fotoSkill = fotoSkill;
 		this.porcentaje = porcentaje;
 	}
 
-	//Getters and Setters
-	public Long getIdSkill() {
-		return idSkill;
+	// Getter and Setter
+	
+	public Long getIdSSkill() {
+		return idSSkill;
 	}
 
-	public void setIdSkill(Long idSkill) {
-		this.idSkill = idSkill;
+	public void setIdSSkill(Long idSSkill) {
+		this.idSSkill = idSSkill;
 	}
 
 	public String getNombreSkill() {
@@ -59,7 +60,6 @@ public class Skills implements Serializable {
 	public void setPorcentaje(int porcentaje) {
 		this.porcentaje = porcentaje;
 	}
-	
 	
 	
 }

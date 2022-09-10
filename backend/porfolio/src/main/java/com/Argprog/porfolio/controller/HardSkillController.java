@@ -1,7 +1,7 @@
 package com.Argprog.porfolio.controller;
 
-import com.Argprog.porfolio.models.Proyecto;
-import com.Argprog.porfolio.service.IProyectoService;
+import com.Argprog.porfolio.models.HardSkill;
+import com.Argprog.porfolio.service.IHardSkillService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,46 +17,42 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/proyecto")
-public class ProyectoController {
-	
+@RequestMapping("/hardskill")
+public class HardSkillController {
 	@Autowired
-	private IProyectoService proyectoService;
+	private IHardSkillService hardSkillService;
 	
 	@GetMapping("/ver")
 	@ResponseBody 
-	public List<Proyecto> verProyecto(){
-		return proyectoService.verProyecto();
+	public List<HardSkill> verSkills(){
+		return hardSkillService.verHardSkill();
 	}
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/nuevo")
-	public void agregarProyecto(@RequestBody Proyecto proyecto){
-		proyectoService.crearProyecto(proyecto);
+	public void agregarSkills(@RequestBody HardSkill hardSkill){
+		hardSkillService.crearHSkills(hardSkill);
 	}
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/borrar/{id}")
-	public void eliminarProyecto(@PathVariable Long id) {
-		proyectoService.eliminarProyecto(id);
+	public void eliminarSkills(@PathVariable Long id) {
+		hardSkillService.eliminarHSkills(id);
 	} 
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/editar/{id}")
-	public Proyecto editarProyecto(@PathVariable Long id,
-                                @RequestParam("titulo") String nuevaNombreProyecto,
-				@RequestParam("descripcion") String nuevaDescripcion,
-				@RequestParam("url") String nuevaUrl,
-				@RequestParam("imagen") String nuevaImagen){
-        Proyecto proyecto = proyectoService.buscarProyecto(id);
+    public HardSkill editarSkills(@PathVariable Long id,
+                                @RequestParam("nombreSkill") String nuevoNombre,
+				@RequestParam("fotoSkill") String nuevaFoto,
+				@RequestParam("porcentaje") int nuevoPorcentaje){
+        HardSkill hardSkill = hardSkillService.buscarHSkills(id);
         
-	proyecto.setTitulo(nuevaNombreProyecto);
-	proyecto.setDescripcion(nuevaDescripcion);
-	proyecto.setUrl(nuevaUrl);
-	proyecto.setImagen(nuevaImagen);
-		
-	proyectoService.crearProyecto(proyecto);
-        return proyecto;
-    }	
-	
+        hardSkill.setNombreSkill(nuevoNombre);
+        hardSkill.setFotoSkill(nuevaFoto);
+        hardSkill.setPorcentaje(nuevoPorcentaje);
+        
+       hardSkillService.crearHSkills(hardSkill);
+        return hardSkill;
+	}
 }

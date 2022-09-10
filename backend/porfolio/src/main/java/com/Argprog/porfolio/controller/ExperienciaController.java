@@ -44,16 +44,16 @@ public class ExperienciaController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/editar/{id}")
 	public Experiencia editarExperiencia(@PathVariable Long id,
-                                @RequestParam("empresa") String nuevaEmpresa,
-				@RequestParam("anoInicio") int nuevoAnoInicio,
-				@RequestParam("anoFin") int nuevoAnoFin,
-				@RequestParam("descripcion") String nuevaDescripcion){
+                                @RequestParam("compañia") String nuevaCompañia,
+				@RequestParam("inicio") int nuevoInicio,
+				@RequestParam("fin") int nuevoFin,
+				@RequestParam("puestoLaboral") String nuevoPuestoLaboral){
         Experiencia experiencia = experienciaService.buscarExperiencia(id);
         
-        experiencia.setEmpresa(nuevaEmpresa);
-        experiencia.setAnoInicio(nuevoAnoInicio);
-	experiencia.setAnoFin(nuevoAnoFin);
-	experiencia.setDescripcion(nuevaDescripcion);
+        experiencia.setCompañia(nuevaCompañia);
+        experiencia.setInicio(nuevoInicio);
+	experiencia.setFin(nuevoFin);
+	experiencia.setPuestoLaboral(nuevoPuestoLaboral);
         
        experienciaService.crearExperiencia(experiencia);
         return experiencia;

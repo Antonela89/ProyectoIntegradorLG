@@ -11,39 +11,40 @@ import javax.persistence.Id;
 public class Proyecto implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idProy;
-	private String nombreProyecto;
+	private Long idPro;
+	private String titulo;
 	private String descripcion;
 	private String url;
-	private String fotoProyecto;
+	private String imagen;
 
 	//Contructores
 	public Proyecto() {
 	}
 
-	public Proyecto(Long idProy, String nombreProyecto, String descripcion, String url, String fotoProyecto) {
-		this.idProy = idProy;
-		this.nombreProyecto = nombreProyecto;
+	public Proyecto(Long idPro, String titulo, String descripcion, String url, String imagen) {
+		this.idPro = idPro;
+		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.url = url;
-		this.fotoProyecto = fotoProyecto;
+		this.imagen = imagen;
 	}
 
-	//Getters and Setters
-	public Long getidProy() {
-		return idProy;
+	// Getter and Setter 
+
+	public Long getIdPro() {
+		return idPro;
 	}
 
-	public void setId(Long idProy) {
-		this.idProy = idProy;
+	public void setIdPro(Long idPro) {
+		this.idPro = idPro;
 	}
 
-	public String getNombreProyecto() {
-		return nombreProyecto;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setNombre(String nombreProyecto) {
-		this.nombreProyecto = nombreProyecto;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getDescripcion() {
@@ -62,14 +63,12 @@ public class Proyecto implements Serializable {
 		this.url = url;
 	}
 
-	public String getFotoProyecto() {
-		return fotoProyecto;
+	public String getImagen() {
+		return imagen;
 	}
 
-	public void setFotoProyecto(String fotoProyecto) {
-		this.fotoProyecto = fotoProyecto;
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	
-	
-
 }

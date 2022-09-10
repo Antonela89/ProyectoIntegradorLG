@@ -11,63 +11,62 @@ import javax.persistence.Id;
 public class Experiencia implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idExp;
-	private String empresa;
-	private int anoInicio;
-	private int anoFin;
-	private String descripcion;
+	private Long idEx;
+	private String compañia;
+	private int inicio;
+	private int fin;
+	private String puestoLaboral;
 
 	//Contructores
 	public Experiencia() {
 	}
 
-	public Experiencia(Long idExp, String empresa, int anoInicio, int anoFin, String descripcion) {
-		this.idExp = idExp;
-		this.empresa = empresa;
-		this.anoInicio = anoInicio;
-		this.anoFin = anoFin;
-		this.descripcion = descripcion;
+	public Experiencia(Long idEx, String compañia, int inicio, int fin, String puestoLaboral) {
+		this.idEx = idEx;
+		this.compañia = compañia;
+		this.inicio = inicio;
+		this.fin = fin;
+		this.puestoLaboral = puestoLaboral;
+	}
+	
+	//Getter and Setter
+	public Long getIdEx() {
+		return idEx;
 	}
 
-	//Getters and Setters
-	public Long getIdExp() {
-		return idExp;
+	public void setIdEx(Long idEx) {
+		this.idEx = idEx;
 	}
 
-	public void setIdExp(Long idExp) {
-		this.idExp = idExp;
+	public String getCompañia() {
+		return compañia;
 	}
 
-	public String getEmpresa() {
-		return empresa;
+	public void setCompañia(String compañia) {
+		this.compañia = compañia;
 	}
 
-	public void setEmpresa(String empresa) {
-		this.empresa = empresa;
+	public int getInicio() {
+		return inicio;
 	}
 
-	public int getAnoInicio() {
-		return anoInicio;
+	public void setInicio(int inicio) {
+		this.inicio = inicio;
 	}
 
-	public void setAnoInicio(int anoInicio) {
-		this.anoInicio = anoInicio;
+	public int getFin() {
+		return fin;
 	}
 
-	public int getAnoFin() {
-		return anoFin;
+	public void setFin(int fin) {
+		this.fin = fin;
 	}
 
-	public void setAnoFin(int anoFin) {
-		this.anoFin = anoFin;
+	public String getPuestoLaboral() {
+		return puestoLaboral;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-		
+	public void setPuestoLaboral(String puestoLaboral) {
+		this.puestoLaboral = puestoLaboral;
+	}	
 }
