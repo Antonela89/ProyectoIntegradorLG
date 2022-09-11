@@ -19,6 +19,9 @@ import { LoginComponent } from './components/login/login.component';
 import { HardskillComponent } from './components/hardskill/hardskill.component';
 import { SoftskillComponent } from './components/softskill/softskill.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { HttpClientModule } from  '@angular/common/http';
+import { interceptorProvider } from './service/interceptor.service';
+
 
 @NgModule ({
   declarations: [
@@ -39,12 +42,13 @@ import { InicioComponent } from './components/inicio/inicio.component';
     InicioComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    interceptorProvider,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
