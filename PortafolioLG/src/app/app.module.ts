@@ -14,8 +14,13 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HysComponent } from './components/hys/hys.component';
 import { FormsModule } from '@angular/forms';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
+import { LoginComponent } from './components/login/login.component';
+import { HardskillComponent } from './components/hardskill/hardskill.component';
+import { SoftskillComponent } from './components/softskill/softskill.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
-@NgModule({
+@NgModule ({
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -26,7 +31,12 @@ import { ProyectoComponent } from './components/proyecto/proyecto.component';
     ExperienciaComponent,
     EducacionComponent,
     HysComponent,
-    ProyectoComponent
+    ProyectoComponent,
+    FormularioComponent,
+    LoginComponent,
+    HardskillComponent,
+    SoftskillComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
